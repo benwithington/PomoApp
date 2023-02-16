@@ -29,8 +29,6 @@ int main() {
 
   glfwSetErrorCallback(error_callback);
 
-  GLFWwindow *glfwWindow;
-
   /* Initialize the library */
   if (!glfwInit()) {
     std::cout << "Unable to initialise GLFW\n";
@@ -45,8 +43,8 @@ int main() {
   // glfwWindowHint(GLFW_DECORATED, false);
 
   /* Create a windowed mode window and its OpenGL context */
-  glfwWindow = glfwCreateWindow(window.width, window.height, "PomoApp", nullptr,
-                                nullptr);
+  GLFWwindow *glfwWindow = glfwCreateWindow(window.width, window.height,
+                                            "PomoApp", nullptr, nullptr);
   if (!glfwWindow) {
     glfwTerminate();
     std::cout << "Unable to create GLFW window\n";
